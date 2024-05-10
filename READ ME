@@ -1,0 +1,9 @@
+Αυτός ο κώδικας είναι γραμμένος σε γλώσσα προγραμματισμού C. Η γλώσσα C είναι μια γλώσσα υψηλού επιπέδου και γενικά χρησιμοποιείται για την ανάπτυξη λογισμικού σε διάφορες πλατφόρμες. 
+Ο κώδικας που παρουσιάζεις δημιουργεί δύο δομές παιχτών (Player) και αρχικοποιεί έναν παίκτη με 5 ζωές, ονομασία και πιθανότητα να χτυπήσει. 
+Στη συνέχεια εκτυπώνει τον αριθμό των ζωών του παίκτη p1. 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+This code is written in C programming language. C is a high-level language and is generally used to develop software on various platforms.
+The code you present creates two Player structures and initializes a player with 5 lives, a name, and a chance to hit.
+It then prints the number of lives of player p1.
