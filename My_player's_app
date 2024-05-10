@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+typedef struct Player
+{
+    char name[25];
+    float chance_to_hit;
+    int lives;
+    bool alive;
+} Player;
+
+int main()
+{
+    Player p1, p2;
+    
+    p1.lives = 5;
+    
+    printf("My player has  %d lives.\n", p1.lives);
+
+    system("PAUSE");
+    return 0;
+}
