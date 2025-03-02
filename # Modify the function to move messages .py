@@ -2,7 +2,7 @@
 def send_messages(messages, sent_messages):
     """Prints each message and moves it to a new list."""
     while messages:  # Loop until the messages list is empty
-        message = messages.pop(0)  # Remove the first message from the list
+        message = messages.pop(0)  # Remove the first message from the lisτ
         print(f"Sending message: {message}")  # Print the message being sent
         sent_messages.append(message)  # Add it to the sent messages list
 
