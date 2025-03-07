@@ -1,23 +1,25 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
+#include <stdio.h>   // Standard input-output library for printf
+#include <stdlib.h>  // Standard library for system commands (like system("PAUSE"))
+#include <stdbool.h> // Library for using boolean data type (true/false)
 
-typedef struct Player
+// Define a struct named 'Player' to represent a player in the game
+typedef struct Player 
 {
-    char name[25];
-    float chance_to_hit;
-    int lives;
-    bool alive;
+    char name[25];        // Character array to store the player's name (up to 24 characters + null terminator)
+    float chance_to_hit;  // Floating-point variable to store the player's chance to hit an opponent
+    int lives;            // Integer variable to store the number of lives the player has
+    bool alive;           // Boolean variable to indicate whether the player is alive (true/false)
 } Player;
 
-int main()
+int main() 
 {
-    Player p1, p2;
-    
-    p1.lives = 5;
-    
-    printf("My player has  %d lives.\n", p1.lives);
+    Player p1, p2;  // Declare two player variables (p1 and p2)
 
-    system("PAUSE");
-    return 0;
+    p1.lives = 5;   // Assign 5 lives to player p1
+
+    // Print the number of lives of player p1
+    printf("My player has %d lives.\n", p1.lives);
+
+    system("PAUSE"); // Pause the program (only works on Windows, can be removed for other systems)
+    return 0;        // Return 0 to indicate successful execution
 }
