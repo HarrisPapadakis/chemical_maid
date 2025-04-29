@@ -1,0 +1,132 @@
+import pygame
+pygame.init()
+
+# Set up the game window
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("My First Game")
+
+# Game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Fill the screen with a color
+    screen.fill((0, 0, 255))  # This fills the screen with blue
+    pygame.display.update()
+
+pygame.quit()
+
+ # Player settings
+player_x = 370
+player_y = 480
+player_speed = 0.3
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+   
+    # Moving the player
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        player_x -= player_speed
+    if keys[pygame.K_RIGHT]:
+        player_x += player_speed
+   
+    # Fill the screen
+    screen.fill((0, 0, 255))
+   
+    # Draw the player
+    pygame.draw.rect(screen, (255, 0, 0), (player_x, player_y, 50, 50))
+   
+    pygame.display.update()
+
+    # Player settings
+player_x = 370
+player_y = 480
+player_speed = 0.3
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+   
+    # Moving the player
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        player_x -= player_speed
+    if keys[pygame.K_RIGHT]:
+        player_x += player_speed
+   
+    # Fill the screen
+    screen.fill((0, 0, 255))
+   
+    # Draw the player
+    pygame.draw.rect(screen, (255, 0, 0), (player_x, player_y, 50, 50))
+   
+    pygame.display.update()
+
+    # Enemy settings
+enemy_x = 200
+enemy_y = 50
+enemy_speed = 0.2
+
+while running:
+    # Check for player input
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Moving the player
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        player_x -= player_speed
+    if keys[pygame.K_RIGHT]:
+        player_x += player_speed
+   
+    # Moving the enemy
+    enemy_x += enemy_speed
+    if enemy_x >= 750 or enemy_x <= 0:
+        enemy_speed *= -1  # Reverse direction
+
+    # Fill the screen and draw player and enemy
+    screen.fill((0, 0, 255))
+    pygame.draw.rect(screen, (255, 0, 0), (player_x, player_y, 50, 50))
+    pygame.draw.rect(screen, (0, 255, 0), (enemy_x, enemy_y, 50, 50))
+
+    pygame.display.update()
+
+    def is_collision(player_x, player_y, enemy_x, enemy_y):
+    distance = ((player_x - enemy_x)**2 + (player_y - enemy_y)**2) ** 0.5
+    return distance < 50
+
+while running:
+    # Check for collision
+    if is_collision(player_x, player_y, enemy_x, enemy_y):
+        print("Game Over!")
+        running = False
+   
+    # Rest of the code to move player, enemy, and update the screen...
+
+    score = 0
+lives = 3
+
+while running:
+    # Collision detection
+    if is_collision(player_x, player_y, enemy_x, enemy_y):
+        lives -= 1
+        if lives == 0:
+            print("Game Over!")
+            running = False
+        else:
+            # Reset positions
+            player_x = 370
+            enemy_x = 200
+   
+    # Increment score
+    score += 1
+    print(f"Score: {score} Lives: {lives}")
+   
+    # Update the screen...
