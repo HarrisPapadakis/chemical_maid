@@ -1,0 +1,14 @@
+# Εγκατάσταση (στο τερματικό / cmd):
+# pip install colorama
+
+from colorama import Fore, init
+
+# Αρχικοποίηση για σωστή λειτουργία στο Windows Terminal
+init(autoreset=True)
+
+# Εκτύπωση με χρώματα
+print(Fore.RED + "Hello World")
+print(Fore.BLUE + "Hello World")
+print(Fore.GREEN + "Hello World")
+print(Fore.YELLOW + "Hello World")
+print(Fore.CYAN + "Thank you")
