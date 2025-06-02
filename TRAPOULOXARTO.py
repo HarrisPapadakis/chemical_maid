@@ -20,8 +20,8 @@ def draw_card():
     # ASCII αναπαράσταση κάρτας
     print("\t\t\t ____________________ ")
     print("\t\t\t|                    |")
-    print(f"\t\t\t|   {value:<2}              |")
-    print(f"\t\t\t|   {suit:<1}                 |")
+    print(f"\t\t\t|   {value:<2}               |")
+    print(f"\t\t\t|   {suit}                |")
     print("\t\t\t|                    |")
     print("\t\t\t|                    |")
     print("\t\t\t|                    |")
@@ -29,8 +29,8 @@ def draw_card():
     print("\t\t\t|                    |")
     print("\t\t\t|                    |")
     print("\t\t\t|                    |")
-    print(f"\t\t\t|              {suit:>1}    |")
-    print(f"\t\t\t|              {value:>2}   |")
+    print(f"\t\t\t|                {suit}   |")
+    print(f"\t\t\t|               {value:>2}   |") 
     print("\t\t\t|____________________|")
 
 # Κεντρική ροή προγράμματος
@@ -44,3 +44,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
