@@ -2,15 +2,14 @@ from faker import Faker
 
 fake = Faker()
 
-print("Name:", fakefake.name())
+print("Name:", fake.name())
 print("Address:", fake.address())
 print("Country:", fake.country())
 print("Email:", fake.email())
 print("Phone Number:", fake.phone_number())
-print("Date of Birth¨¨", fake.date_of_birth())
-print("Job", fake.job())
+print("Date of Birth:", fake.date_of_birth())
+print("Job:", fake.job())
 print("Company:", fake.company())
-print("Username"¨, fake.username())
+print("Username:", fake.user_name())
 print("Website:", fake.url())
 print("Text:", fake.text())
-
