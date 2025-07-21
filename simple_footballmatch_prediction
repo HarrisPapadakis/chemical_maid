@@ -1,0 +1,33 @@
+class Team:
+    def __init__(self, name, form, roster_strength, weaknesses):
+        self.name = name
+        self.form = form                # float: 0.0 - 1.0
+        self.roster_strength = roster_strength  # float: 0.0 - 1.0
+        self.weaknesses = weaknesses    # int: number of major weaknesses
+
+    def score(self):
+        # Απλός υπολογισμός “δύναμης” ομάδας
+        return (self.form * 0.5 + self.roster_strength * 0.4) - self.weaknesses * 0.1
+
+
+def predict_match(team1, team2):
+    score1 = team1.score()
+    score2 = team2.score()
+
+    print(f"{team1.name} score: {score1:.2f}")
+    print(f"{team2.name} score: {score2:.2f}")
+
+    if abs(score1 - score2) < 0.1:
+        return "Ισοπαλία"
+    elif score1 > score2:
+        return f"Νίκη για {team1.name}"
+    else:
+        return f"Νίκη για {team2.name}"
+
+
+# ΠΑΡΑΔΕΙΓΜΑ ΧΡΗΣΗΣ:
+team_a = Team("Ολυμπιακός", form=0.8, roster_strength=0.9, weaknesses=1)
+team_b = Team("Παναθηναϊκός", form=0.7, roster_strength=0.85, weaknesses=2)
+
+result = predict_match(team_a, team_b)
+print("Πρόβλεψη:", result)
